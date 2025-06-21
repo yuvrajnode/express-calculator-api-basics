@@ -1,38 +1,87 @@
-# Basic-HTTP--Server-
-# Basic HTTP Server using Node.js and Express
+🧮 Express Arithmetic API using Route Parameters
 
-This is a simple HTTP server built using Express.js with four arithmetic endpoints. You can perform basic operations by sending GET requests with query parameters.
+This is a simple Node.js project using Express.js that acts as an HTTP server for basic arithmetic operations. Instead of using query parameters, it uses **route parameters** (`/sum/:a/:b`) for cleaner and RESTful endpoints.
 
-## 🚀 How to Run
-
-1. Clone the repository:
+1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/basic-http-server.git
-cd basic-http-server
+git clone https://github.com/Yuvrajjjjjjj/Basic-HTTP--Server-.git
+cd Basic-HTTP--Server-
+```
 
-2. Install dependencies:
+2. Install Dependencies
+
+```bash
 npm install
+```
 
-3. Start the server:
+3. Start the Server
+
+```bash
 node index.js
-The server will run on http://localhost:3000
+```
 
-📌 Available Routes
-All endpoints expect two query parameters: a and b.
+Server runs at: [http://localhost:3000](http://localhost:3000)
+
+
+## 📌 Available API Endpoints
+
+Each route expects two numbers passed directly in the URL path.
 
 ➕ Addition
-http://localhost:3000/sum?a=1&b=2
-Response: { "ans": 3 }
 
-✖️ Multiplication
-http://localhost:3000/multiply?a=2&b=3
-Response: { "ans": 6 }
+```http
+GET /sum/:a/:b
+```
+Example:
+`GET http://localhost:3000/sum/4/5`  
+Response:  
+```json
+{ "ans": 9 }
+```
 
-➗ Division
-http://localhost:3000/divide?a=10&b=2
-Response: { "ans": 5 }
 
 ➖ Subtraction
-http://localhost:3000/subtract?a=5&b=3
-Response: { "ans": 2 }
+
+```http
+GET /subtract/:a/:b
+```
+Example:
+`GET http://localhost:3000/subtract/9/3`  
+Response:
+```json
+{ "ans": 6 }
+```
+
+
+✖️ Multiplication
+
+```http
+GET /multiply/:a/:b
+```
+Example:
+`GET http://localhost:3000/multiply/2/6`  
+Response:  
+```json
+{ "ans": 12 }
+```
+
+
+➗ Division
+
+```http
+GET /divide/:a/:b
+```
+Example: 
+`GET http://localhost:3000/divide/10/2`  
+Response:
+```json
+{ "ans": 5 }
+```
+
+🛠 Technologies Used
+
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+
+This project is open-source and available under the [MIT License](LICENSE).
