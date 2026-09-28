@@ -1,87 +1,36 @@
-🧮 Express Arithmetic API using Route Parameters
+# Express Calculator API
 
-This is a simple Node.js project using Express.js that acts as an HTTP server for basic arithmetic operations. Instead of using query parameters, it uses **route parameters** (`/sum/:a/:b`) for cleaner and RESTful endpoints.
+A tiny Express.js server that does arithmetic through route parameters, e.g. `GET /sum/4/5`. Built as a first exercise in routing and HTTP servers with Node.js.
 
-1. Clone the Repository
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
-```bash
-git clone https://github.com/Yuvrajjjjjjj/Basic-HTTP--Server-.git
-cd Basic-HTTP--Server-
-```
-
-2. Install Dependencies
+## Getting started
 
 ```bash
+git clone https://github.com/yuvrajnode/express-calculator-api-basics.git
+cd express-calculator-api-basics
 npm install
-```
-
-3. Start the Server
-
-```bash
 node index.js
 ```
 
-Server runs at: [http://localhost:3000](http://localhost:3000)
+The server runs at `http://localhost:3000`.
 
+## Endpoints
 
-## 📌 Available API Endpoints
+| Method | Route | Example | Response |
+|---|---|---|---|
+| GET | `/sum/:a/:b` | `/sum/4/5` | `{ "ans": 9 }` |
+| GET | `/subtract/:a/:b` | `/subtract/9/3` | `{ "ans": 6 }` |
+| GET | `/multiply/:a/:b` | `/multiply/2/6` | `{ "ans": 12 }` |
+| GET | `/divide/:a/:b` | `/divide/10/2` | `{ "ans": 5 }` |
 
-Each route expects two numbers passed directly in the URL path.
-
-➕ Addition
-
-```http
-GET /sum/:a/:b
-```
-Example:
-`GET http://localhost:3000/sum/4/5`  
-Response:  
-```json
-{ "ans": 9 }
+```bash
+curl http://localhost:3000/multiply/7/6
+# {"ans":42}
 ```
 
+## License
 
-➖ Subtraction
-
-```http
-GET /subtract/:a/:b
-```
-Example:
-`GET http://localhost:3000/subtract/9/3`  
-Response:
-```json
-{ "ans": 6 }
-```
-
-
-✖️ Multiplication
-
-```http
-GET /multiply/:a/:b
-```
-Example:
-`GET http://localhost:3000/multiply/2/6`  
-Response:  
-```json
-{ "ans": 12 }
-```
-
-
-➗ Division
-
-```http
-GET /divide/:a/:b
-```
-Example: 
-`GET http://localhost:3000/divide/10/2`  
-Response:
-```json
-{ "ans": 5 }
-```
-
-🛠 Technologies Used
-
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
-
-This project is open-source and available under the [MIT License](LICENSE).
+[MIT](LICENSE) © Yuvraj Singh
